@@ -1,0 +1,17 @@
+---
+import Accordion from "../ui/Accordion.astro";
+import SectionTitle from "../ui/SectionTitle.astro";
+import Section from "./Section.astro";
+
+const description = "Step-by-Step Guide to Axis Development, and Future Plans. ";
+---
+
+<Section id="services">
+  <div class="mt-[140px]">
+    <SectionTitle
+      sectionTitle="Roadmap"
+      description={description}
+    />
+    <Accordion />
+  </div>
+</Section>

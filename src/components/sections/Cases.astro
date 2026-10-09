@@ -1,0 +1,55 @@
+---
+import { Image } from "astro:assets";
+import Card from "../ui/Card.astro";
+import Section from "./Section.astro";
+
+const cards = [
+  {
+    index: 0,
+    title:
+      "For everyday payments, Axis can be used for fast, low-cost peer-to-peer payments without relying on traditional financial institutions. Its Litecoin-based foundation makes it suitable for sending digital value directly between users.",
+    link: "",
+  },
+  {
+    index: 1,
+    title:
+      "For merchant payments, Businesses can accept AX as a digital payment option for products and services. This can give merchants another way to receive payments while expanding access to cryptocurrency-based commerce.",
+    link: "",
+  },
+  {
+    index: 1,
+    title:
+      "For digital store of value, Axis can serve as a decentralized asset that users can hold and transfer without depending on a central authority. Its fixed-supply approach is designed to give AX scarcity and a clear monetary structure over time.",
+    link: "",
+  },
+];
+
+import larrow from "../../assets/icon3.svg";
+import SectionTitle from "../ui/SectionTitle.astro";
+---
+
+<Section id="cases">
+  <SectionTitle
+    sectionTitle="Documentation"
+    description="View our highlighted use cases, and learn how Axis works."
+  />
+  <div class="flex flex-col lg:flex-row justify-between rounded-[45px] p-1">
+    {
+      cards.map((card) => (
+        <Card>
+          <div class="flex p-[60px] h-full bg-dark text-white rounded-[45px] m-[1px]">
+            <div class="flex flex-col gap-5">
+              <p>{card.title}</p>
+              <a href={card.link} class="flex items-center gap-[15px]">
+                <span class="text-green">View Docs</span>
+                <picture>
+                  <Image src={larrow} alt="Arrow pointing up right" />
+                </picture>
+              </a>
+            </div>
+          </div>
+        </Card>
+      ))
+    }
+  </div>
+</Section>

@@ -1,0 +1,36 @@
+---
+import AccordionItem from "./AccordionItem.astro";
+
+const content = [
+  {
+    index: 1,
+    title: "Phase 1 ",
+    description:
+      "Launch Axis Mainet    ● Release Axis Core v1.0.1 ● Launch Block Explorer ● Launch Wesbite ● Setup Public Nodes ",
+  },
+  {
+    index: 2,
+    title: "Phase 2",
+    description:
+      "Launch Axis Lite Wallet ● Launch Wrapped AX ● Add DEX ● Add Payment Intergrations",
+  },
+  {
+    index: 3,
+    title: "Phase 3",
+    description:
+      "Exchange Listings ● Increase Liquity ● Build Partnerships ● Global Community Growth ● Expand Axis Ecosystem",
+  },
+];
+---
+
+{
+  content.map((item) => {
+    return (
+      <AccordionItem
+        index={item.index}
+        title={item.title}
+        description={item.description}
+      />
+    );
+  })
+}

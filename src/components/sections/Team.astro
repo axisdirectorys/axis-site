@@ -1,0 +1,93 @@
+---
+import SectionTitle from "../ui/SectionTitle.astro";
+import TeamCard from "../ui/TeamCard.astro";
+import Section from "./Section.astro";
+
+const description =
+  "Created in 2026 to achieve the bronze standard, Axis is a digital currency on the Axis Blockchain.";
+
+import {
+  default as p1,
+  default as p2,
+  default as p3,
+  default as p4,
+  default as p5,
+  default as p6,
+} from "../../assets/pics/profile-pic.png";
+
+const team = [
+  {
+    pic: p1,
+    name: "Innovation",
+    role: "Start",
+    description:
+      "Axis was created as a Litecoin-based project to build on Litecoin’s proven foundation while creating a new network with its own identity, economics, and long-term vision. The goal is to make Axis a modern “bronze” counterpart to Bitcoin and Litecoin—accessible, practical, and designed for everyday digital payments.",
+    link: "https://linkedin.com",
+  },
+  {
+    pic: p2,
+    name: "Algorithm",
+    role: "Scrypt PoW",
+    description:
+      "Scrypt Proof-of-Work was chosen because it provides a proven, secure mining algorithm already used successfully by Litecoin. Using Scrypt gives Axis a familiar and battle-tested foundation while keeping the network focused on decentralized, permissionless mining.",
+    link: "https://linkedin.com",
+  },
+  {
+    pic: p3,
+    name: "Standard",
+    role: "Bronze",
+    description:
+      "Axis represents the Bronze Standard—building on the proven foundations of Bitcoin and Litecoin while creating a more accessible, practical network for everyday use. Just as gold and silver represent established stores of value, Axis aims to represent the next layer: digital bronze built for utility, payments, and everyday transactions.",
+    link: "https://linkedin.com",
+  },
+  // {
+  //   pic: p4,
+  //   name: "Maria Katz",
+  //   role: "CEO",
+  //   description:
+  //     "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
+  //   link: "https://linkedin.com",
+  // },
+  // {
+  //   pic: p5,
+  //   name: "Maria Katz",
+  //   role: "CEO",
+  //   description:
+  //     "3+ years of experience in paid search advertising. Skilled in campaign management and performance analysis",
+  //   link: "https://linkedin.com",
+  // },
+  // {
+  //   pic: p6,
+  //   name: "Maria Katz",
+  //   role: "CEO",
+  //   description:
+  //     "3+ years of experience in paid search advertising. Skilled in campaign management and performance analys",
+  //   link: "https://linkedin.com",
+  // },
+];
+---
+
+<Section id="about">
+  <div class="mt-[140px]">
+    <SectionTitle sectionTitle="About Axis" description={description} />
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 grid-rows-2 gap-10"
+    >
+      {
+        team.map((member, index) => (
+          <TeamCard
+            key={index}
+            pic={member.pic}
+            name={member.name}
+            role={member.role}
+            description={member.description}
+            link={member.link}
+          />
+        ))
+      }
+    </div>
+    <!-- <div class="flex justify-end mt-10">
+      <button class="btn-primary">See all team</button>
+    </div> -->
+  </div>
+</Section>
